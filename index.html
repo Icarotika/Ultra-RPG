@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>🗡️ RPG Adventure</h1>
+        </header>
+
+        <div class="game-content">
+            <!-- Player Stats -->
+            <div class="player-panel">
+                <h2>👤 Jogador</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <span>Nível:</span>
+                        <span id="player-level">1</span>
+                    </div>
+                    <div class="stat">
+                        <span>HP:</span>
+                        <span id="player-hp">100</span>/<span id="player-max-hp">100</span>
+                    </div>
+                    <div class="stat">
+                        <span>MP:</span>
+                        <span id="player-mp">50</span>/<span id="player-max-mp">50</span>
+                    </div>
+                    <div class="stat">
+                        <span>EXP:</span>
+                        <span id="player-exp">0</span>/<span id="player-exp-next">100</span>
+                    </div>
+                    <div class="stat">
+                        <span>Ataque:</span>
+                        <span id="player-attack">20</span>
+                    </div>
+                    <div class="stat">
+                        <span>Defesa:</span>
+                        <span id="player-defense">10</span>
+                    </div>
+                </div>
+                
+                <div class="hp-bar">
+                    <div class="bar-fill hp-fill" id="hp-bar"></div>
+                </div>
+                <div class="mp-bar">
+                    <div class="bar-fill mp-fill" id="mp-bar"></div>
+                </div>
+                <div class="exp-bar">
+                    <div class="bar-fill exp-fill" id="exp-bar"></div>
+                </div>
+            </div>
+
+            <!-- Battle Area -->
+            <div class="battle-area">
+                <div class="enemy-panel" id="enemy-panel" style="display: none;">
+                    <h3 id="enemy-name">Inimigo</h3>
+                    <div class="enemy-sprite" id="enemy-sprite">👹</div>
+                    <div class="enemy-stats">
+                        <div class="stat">
+                            <span>HP:</span>
+                            <span id="enemy-hp">50</span>/<span id="enemy-max-hp">50</span>
+                        </div>
+                        <div class="enemy-hp-bar">
+                            <div class="bar-fill hp-fill" id="enemy-hp-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="battle-actions" id="battle-actions" style="display: none;">
+                    <button class="action-btn" id="attack-btn">⚔️ Atacar</button>
+                    <button class="action-btn" id="magic-btn">✨ Magia (10 MP)</button>
+                    <button class="action-btn" id="heal-btn">💚 Curar (15 MP)</button>
+                    <button class="action-btn" id="run-btn">🏃 Fugir</button>
+                </div>
+
+                <div class="exploration" id="exploration">
+                    <h3>🌍 Exploração</h3>
+                    <p>Você está em uma floresta misteriosa...</p>
+                    <button class="explore-btn" id="explore-btn">🔍 Explorar</button>
+                    <button class="explore-btn" id="boss-btn" style="display: none;">👑 Enfrentar Chefão</button>
+                </div>
+            </div>
+
+            <!-- Inventory -->
+            <div class="inventory-panel">
+                <h3>🎒 Inventário</h3>
+                <div class="inventory-grid" id="inventory-grid">
+                    <!-- Items will be added here -->
+                </div>
+                <div class="inventory-actions">
+                    <button class="inventory-btn" id="shop-btn">🏪 Loja</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Battle Log -->
+        <div class="battle-log">
+            <h3>📜 Log de Batalha</h3>
+            <div class="log-content" id="log-content">
+                <p>Bem-vindo ao RPG Adventure! Explore para encontrar inimigos.</p>
+            </div>
+        </div>
+
+        <!-- Shop Modal -->
+        <div class="modal" id="shop-modal" style="display: none;">
+            <div class="modal-content">
+                <h3>🏪 Loja</h3>
+                <div class="shop-items" id="shop-items">
+                    <!-- Shop items will be added here -->
+                </div>
+                <button class="close-btn" id="close-shop">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Level Up Modal -->
+        <div class="modal" id="levelup-modal" style="display: none;">
+            <div class="modal-content">
+                <h3>🎉 Level Up!</h3>
+                <p id="levelup-text">Você subiu para o nível 2!</p>
+                <button class="close-btn" id="close-levelup">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
